@@ -1,0 +1,69 @@
+<!DOCTYPE html>   
+<html>   
+    <head>    
+        <meta charset="UTF-8"> 
+        <title>Evaluation Form Admin</title>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    </head>  
+    <script type="text/javascript" src='../js/vue.js'></script> 
+    <script type="text/javascript" src='../js/vue-resource.js'></script> 
+    <script type="text/javascript" src='../js/jquery-2.0.3.js'></script>
+    <script type="text/javascript" src='../js/bootstrap.min.js'></script>
+    
+
+    
+    <style type="text/css"></style>
+    
+
+
+    <body>    
+
+        <h2>Demo01: Introduction</h2>
+
+    	<div id='app-01'>
+            {{message}}
+        </div>
+
+        <div id='app-02'>
+            <span v-bind:title='message'>鼠标悬停几秒钟查看此处动态绑定的提示信息！</span>
+        </div>
+
+    	<div id='app-03'>
+            <p v-if='seen'>Now you see me</p>
+            <p v-else>Now I see you</p>
+        </div>
+
+        <div id='app-04'>
+            <ol>
+                <li v-for='todo in todos'>{{todo.text}}</li>
+
+            </ol>
+        </div>
+
+        <div id='app-05'>
+            {{message}}
+            <button v-on:click='reverseMessage'>reverseMessage</button>
+        </div>
+
+        <div id='app-06'>
+            <p>{{message}}</p>
+            <input v-model='message'>
+        </div>
+
+        <div id='app-07'>
+            <ol>
+                <todo-item v-for='item in groceryList' v-bind:todo='item'></todo-item>
+            </ol>   
+        </div>
+
+        <div id='app-0'></div>
+
+        <div id='app-0'></div>
+
+    </body>  
+
+    <script type="text/javascript" src='../js/demo/demo01.js'></script>
+
+</html>  
+
+
