@@ -1,0 +1,7 @@
+/* Test Chrome DevTools function: Performance 'instrumenting coverage' */
+h2 {
+    color: blue;
+}
+h3 {
+    color: red;
+}
