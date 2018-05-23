@@ -3,6 +3,7 @@
 .idea/
 *.iml
 *.iws
+webpack-demo/node_modules
 
 # Mac
 .DS_Store
