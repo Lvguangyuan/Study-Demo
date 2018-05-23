@@ -1,0 +1,10 @@
+var path = require('path');
+console.log('__dirname:	'+__dirname);
+console.log('__dirname+../src:	'+__dirname + '../src');
+console.log('resolve __dirname+../src:	'+path.resolve(__dirname, '../src'));
+console.log('join __dirname+../src:	'+path.join(__dirname, '../src'));
+console.log('resolve ../src:	'+path.resolve('../src'));
+console.log('resolve src:	'+path.resolve('src'));
+console.log('resolve /src:	'+path.resolve('/src'));
+console.log('resolve ./src:	'+path.resolve('./src'));
+console.log('resolve /a/b/c/src:	'+path.resolve('/a/b/c/src'));
