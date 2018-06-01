@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.12.0/bootstrap-table.css">
+	</head>
+	<body>
+		<div class="container">
+			<table data-toggle="table"
+				   data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/">
+				<thead>
+				<tr>
+					<th data-field="name" data-formatter="nameFormatter">Name</th>
+					<th data-field="stargazers_count" data-formatter="starsFormatter">Stars</th>
+					<th data-field="forks_count" data-formatter="forksFormatter">Forks</th>
+					<th data-field="description">Description</th>
+				</tr>
+				</thead>
+			</table>
+
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap-table/1.12.0/bootstrap-table.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.js"></script>
+		<script>
+            function nameFormatter(value) {
+                return '<a href="https://github.com/wenzhixin/' + value + '">' + value + '</a>';
+            }
+
+            function starsFormatter(value) {
+                return '<i class="glyphicon glyphicon-star"></i> ' + value;
+            }
+
+            function forksFormatter(value) {
+                return '<i class="glyphicon glyphicon-cutlery"></i> ' + value;
+            }
+		</script>
+	</body>
+</html>
