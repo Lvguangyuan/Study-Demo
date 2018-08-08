@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Demo</title>
+    <style type="text/css">
+        h2{
+            color:bisque;
+            font-size: 60px;
+        }
+
+        @supports (display: flex) {
+            h2 {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 768px){
+            h2 {
+                font-size: 100px;
+                background-color: #2b542c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>This is CSS Demo Page</h2>
+    <h3> In JavaScript, @media can be accessed via the CSSMediaRule CSS object model interface.</h3>
+</body>
+</html>
