@@ -9,6 +9,11 @@
 
         <h2>Jquery Basic Use</h2>
 
+        <a href="demo.html">Goto Baidu</a>
+
+        <button class="change">Change content</button>
+
+        <h3 class="content">You will never have what you like until you learn to like what you have.</h3>
 
     </body>
 
@@ -16,13 +21,56 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            alert("document ready...");
+            // alert("document ready...");
+
+            function changeContent(msg) {
+                $(".content").html(msg);
+                window.history.pushState("cart-url-state", null, window.location.pathname)
+            }
+
+            $(".change").on("click", changeContent);
+
+            // window.onpageshow = function (ev) {
+            //     alert("page show:"+ev.persisted);
+            // }
+
+            //
+            // if (window.history && window.history.pushState) {
+            //     $(window).on('popstate', function (e) {
+            //         console.log("plp-url-state");
+            //         changeContent();
+            //     });
+            // }
+
+            window.addEventListener('pageshow', function (event) {
+                console.log(event.persisted);
+                if (event.persisted || window.performance && window.performance.navigation.type == 2)  {
+                    console.log("persisted:true")
+                }else{
+                    console.log("persisted:false");
+                }
+            }, false);
+
+            window.onpopstate = function (e) {
+                console.log(e.state);
+                changeContent("This is popstate event");
+                if (e.state === "cart-url-state") {
+
+                }
+
+            }
+            // window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+            // window.history.forward(1);
+
         });
 
+
         // one usage of head.js
-        head.ready(function () {
-            alert("head ready!!!");
-        });
+        // head.ready(function () {
+        //     alert("head ready!!!");
+        // });
+
+
 
 
     </script>
