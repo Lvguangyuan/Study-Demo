@@ -42,14 +42,15 @@
             //     });
             // }
 
-            window.addEventListener('pageshow', function (event) {
-                console.log(event.persisted);
-                if (event.persisted || window.performance && window.performance.navigation.type == 2)  {
+
+            $(window).on("pageshow", function (e) {
+                console.log(e.originalEvent.persisted);
+                if (e.originalEvent.persisted || window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD)  {
                     console.log("persisted:true")
                 }else{
                     console.log("persisted:false");
                 }
-            }, false);
+            });
 
             window.onpopstate = function (e) {
                 console.log(e.state);
